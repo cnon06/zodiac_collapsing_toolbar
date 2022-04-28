@@ -9,19 +9,24 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.single_row.view.*
+import java.sql.Array
 
-class zodiacBaseAdapter (context: Context) : BaseAdapter()
+class zodiacBaseAdapter(context: Context, allZodiac2: ArrayList<com.cnon.zodiac.Zodiac>) : BaseAdapter()
 {
 
-    var allZodiac: ArrayList<Zodiac>
+  var allZodiac: ArrayList<com.cnon.zodiac.Zodiac>
    var context: Context
 
     init {
 
-        allZodiac = ArrayList<Zodiac>()
+       allZodiac=allZodiac2
+
+      //  allZodiac = ArrayList<Zodiac>()
         this.context = context
 
-        var zodiacName = context.resources.getStringArray(R.array.zodiac)
+
+        /*
+         var zodiacName = context.resources.getStringArray(R.array.zodiac)
         var zodiacIDate = context.resources.getStringArray(R.array.zodiacDates)
         var zodiacSymbol = arrayOf(R.drawable.aries,R.drawable.taurus,R.drawable.gemini, R.drawable.cancer, R.drawable.leo
         ,R.drawable.virgo,R.drawable.libra,R.drawable.scorpio,R.drawable.sagittarius,R.drawable.capricorn,R.drawable.aquarius,
@@ -32,6 +37,9 @@ class zodiacBaseAdapter (context: Context) : BaseAdapter()
             var arrayWillBeListedZodiac = Zodiac(zodiacName[i],zodiacIDate[i],zodiacSymbol[i])
             allZodiac.add(arrayWillBeListedZodiac)
         }
+         */
+
+
 
 
     }
@@ -70,7 +78,7 @@ class zodiacBaseAdapter (context: Context) : BaseAdapter()
 
         viewHolder.zodiacImage.setImageResource(allZodiac.get(p0).burcSembol)
         viewHolder.zodiacName.setText(allZodiac.get(p0).zodiacName)
-        viewHolder.zodiacIDate.setText(allZodiac.get(p0).zodiacIDatei)
+        viewHolder.zodiacIDate.setText(allZodiac.get(p0).zodiacIDate)
 
         Log.e("Inflater",allZodiac.get(p0).zodiacName)
 
