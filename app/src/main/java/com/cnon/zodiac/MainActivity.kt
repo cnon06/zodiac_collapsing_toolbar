@@ -2,8 +2,13 @@ package com.cnon.zodiac
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.CollapsingToolbarLayout
+
+
+
 
 
 
@@ -16,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
 
       setContentView(R.layout.activity_main)
-
 
 
         /*
